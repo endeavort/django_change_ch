@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 {% block main %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <input type="submit" value="変換" class="btn btn-info">
-</form>
+<div class="row">
+    <div class="col_sm">
+        <h2>変換前</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <input type="submit" value="変換" class="btn btn-info">
+        </form>
+    </div>
+    <div class="col_sm">
+        <h2>変換後</h2>
+        <p>{{ new_text}}</p>
+    </div>
+</div>
 {% endblock main %}
 
