@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% block main %}
+{% comment %} 発生したエラーはリストで返される {% endcomment %}
+{% for error in  form.non_field_errors%}
+<div class="alert alert-danger">
+    {{ error }}
+</div>
+{% endfor %}
+
 <div class="row">
     <div class="col_sm">
         <h2>変換前</h2>
