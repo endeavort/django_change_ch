@@ -12,7 +12,12 @@
         <h2>変換前</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p}}
+            {% for field in form %}
+            <p>
+                <label>{{ field.label }}</label>
+                {{field}}
+            </p>
+            {% endfor %}
             <input type="submit" value="変換" class="btn btn-info">
         </form>
     </div>
